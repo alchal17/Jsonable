@@ -4,18 +4,16 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Jsonable extends Stringify{
-    public Jsonable() {
-    }
+public class Jsonable extends Stringify {
 
     @Override
-    String integerToJsonString(Integer value) {
+    protected String numberToJsonString(Number value) {
         return value.toString();
     }
 
     @Override
     String stringToJsonString(String string) {
-        return "'" + string + "'";
+        return "\"" + string + "\"";
     }
 
     @Override

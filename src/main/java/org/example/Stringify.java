@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Map;
 
 public abstract class Stringify {
-    abstract String integerToJsonString(Integer value);
+    abstract String numberToJsonString(Number value);
     abstract String stringToJsonString(String string);
     abstract String booleanToJsonString(Boolean bool);
     abstract String arrayToJsonString(Object[] array);
@@ -13,8 +13,8 @@ public abstract class Stringify {
     abstract String mapToHashString(Map map);
     abstract String nullToJsonString();
     public String valueToJsonString(Object object) {
-        if (object instanceof Integer) {
-            return this.integerToJsonString((Integer) object);
+        if (object instanceof Number) {
+            return this.numberToJsonString((Number) object);
         }
         if (object instanceof String) {
             return this.stringToJsonString((String) object);
