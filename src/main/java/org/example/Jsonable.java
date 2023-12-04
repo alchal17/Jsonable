@@ -87,7 +87,7 @@ public class Jsonable extends Stringify {
     private String getValueField(Object object, Field field) {
         try {
             Object valueField = field.get(object);
-            return "'" + field.getName() + "': " + this.valueToJsonString(valueField);
+            return "\"" + field.getName() + "\": " + this.valueToJsonString(valueField);
         } catch (IllegalAccessException e) {
             return null;
         }
